@@ -65,7 +65,7 @@ class JobProfileDialog extends ComponentDialog {
 
   async initiateSteps(stepContext) {
     return stepContext.prompt('ChoicePrompt', {
-      prompt: 'Hi! \n\n My name is Regan. I am a Front end developer mostly interested in Javascript, React, Redux and Node projects. If you have a job opportunity for me please use this bot.\n\nWhy you might ask? This way we both know if the project is one im interested in before we start talking and I don\'t get overwhelmed in my inbox and linkedIn',
+      prompt: 'Hi! \n\n My name is Regan. I am a Front End Developer mostly interested in Javascript, React, Redux and Node projects. If you have a job opportunity for me please use this bot.\n\nWhy you might ask? This way we both know if the project is one im interested in before we start talking and I don\'t get overwhelmed in my inbox and linkedIn',
       retryPrompt: 'I\'m sorry I did not understand you, use the buttons below if you have trouble',
       choices: ChoiceFactory.toChoices(['Let\'s do this!', 'I hate this, goodbye'])
     });
