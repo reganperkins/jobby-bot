@@ -13,7 +13,7 @@ class DialogAndWelcomeBot extends DialogBot {
         if (context.activity.membersAdded[idx].id !== context.activity.recipient.id) {
           const welcomeCard = CardFactory.animationCard(
             ' ',
-            ['https://media.giphy.com/media/MB5cRgSVDW4F2/source.gif'],
+            ['https://media.giphy.com/media/MB5cRgSVDW4F2/source.gif']
           );
           await context.sendActivity({ attachments: [welcomeCard] });
           await dialog.run(context, conversationState.createProperty('DialogState'));

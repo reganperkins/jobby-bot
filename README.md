@@ -15,4 +15,4 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 - start conversion again if session not stored
 - if session is stored and they previously finished the convo ask if they want to start again or contact me
 - if session is stored start from where they left off
-- bot typing..
+

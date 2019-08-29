@@ -10,19 +10,15 @@ const {
   ConversationState,
   MemoryStorage,
   UserState,
+  ShowTypingMiddleware
 } = require('botbuilder');
 const { DialogAndWelcomeBot } = require('./bots/dialogAndWelcomeBot');
 const { JobProfileDialog } = require('./dialogs/jobProfileDialog');
 
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MicrosoftAppId,
-  appPassword: process.env.MicrosoftAppPassword,
-});
-
-// const adapter = new BotFrameworkAdapter({
-//   appId: null,
-//   appPassword: null,
-// });
+  appPassword: process.env.MicrosoftAppPassword
+}).use(new ShowTypingMiddleware(0, 550));
 
 adapter.onTurnError = async (context, error) => {
   console.log('onTurnError', error);
@@ -38,7 +34,7 @@ const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
-  console.log(`${server.name} listening to ${server.url}`);
+  console.log(`${ server.name } listening to ${ server.url }`);
 });
 
 server.post('/api/messages', (req, res) => {
